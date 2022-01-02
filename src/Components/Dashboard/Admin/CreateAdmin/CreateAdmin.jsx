@@ -11,7 +11,7 @@ const CreateAdmin = () => {
         const email = emailAddress.current.value;
         const role = 'admin'
         const user = { email, role };
-        fetch('http://localhost:5000/user/admin', {
+        fetch('https://morning-refuge-65051.herokuapp.com/user/admin', {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

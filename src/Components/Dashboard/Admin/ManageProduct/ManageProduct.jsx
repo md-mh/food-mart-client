@@ -7,7 +7,7 @@ const ManageProduct = () => {
 
     const [services, setServices] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/food')
+        fetch('https://morning-refuge-65051.herokuapp.com/food')
             .then(res => res.json())
             .then(data => setServices(data));
     }, []);
@@ -16,7 +16,7 @@ const ManageProduct = () => {
     const handleDelete = id => {
         const confirm = window.confirm("Are you wants to delete?");
         if (confirm) {
-            fetch(`http://localhost:5000/food/${id}`, {
+            fetch(`https://morning-refuge-65051.herokuapp.com/food/${id}`, {
                 method: "DELETE"
             })
             const remaining = services.filter(data => data._id !== id);

@@ -11,7 +11,7 @@ const PlaceOrder = () => {
     const [serviceDetails, setServiceDetails] = useState([]);
     useEffect(
         () => {
-            fetch(`http://localhost:5000/food/${id}`)
+            fetch(`https://morning-refuge-65051.herokuapp.com/food/${id}`)
                 .then(res => res.json())
                 .then(data => setServiceDetails(data))
         }, [id]);
@@ -33,7 +33,7 @@ const PlaceOrder = () => {
 
         const newOrder = { name, email, title, price, mobile, address, status };
 
-        fetch('http://localhost:5000/order', {
+        fetch('https://morning-refuge-65051.herokuapp.com/order', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

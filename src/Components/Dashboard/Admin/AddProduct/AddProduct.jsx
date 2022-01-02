@@ -9,7 +9,7 @@ const AddProduct = () => {
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
 
-        axios.post('http://localhost:5000/food', data)
+        axios.post('https://morning-refuge-65051.herokuapp.com/food', data)
         alert('Add Product Successfully');
         reset();
     }

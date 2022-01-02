@@ -9,7 +9,7 @@ const ManageOrder = () => {
     const [oneOrder, setOneOrder] = useState({});
 
     useEffect(() => {
-        fetch('http://localhost:5000/order')
+        fetch('https://morning-refuge-65051.herokuapp.com/order')
             .then(res => res.json())
             .then(data => setOrders(data))
     }, [])
@@ -18,7 +18,7 @@ const ManageOrder = () => {
     const handleDelete = id => {
         const confirm = window.confirm("Are you wants to delete ?");
         if (confirm) {
-            fetch(`http://localhost:5000/order/${id}`, {
+            fetch(`https://morning-refuge-65051.herokuapp.com/order/${id}`, {
                 method: "DELETE"
             })
             const remaining = orders.filter(data => data._id !== id);
@@ -30,7 +30,7 @@ const ManageOrder = () => {
 
     // Update status 
     const handleUpdateStatus = id => {
-        const url = `http://localhost:5000/order/${id}`;
+        const url = `https://morning-refuge-65051.herokuapp.com/order/${id}`;
 
         fetch(url)
             .then(res => res.json())

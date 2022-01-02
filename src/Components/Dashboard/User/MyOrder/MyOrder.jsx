@@ -10,7 +10,7 @@ const MyOrder = () => {
     const [orders, setOrders] = useState([]);
     const [myorder, setMyorder] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/order')
+        fetch('https://morning-refuge-65051.herokuapp.com/order')
             .then(res => res.json())
             .then(data => setOrders(data))
     }, [])
@@ -25,7 +25,7 @@ const MyOrder = () => {
     const handleDelete = id => {
         const confirm = window.confirm("Are you wants to delete ?");
         if (confirm) {
-            fetch(`http://localhost:5000/order/${id}`, {
+            fetch(`https://morning-refuge-65051.herokuapp.com/order/${id}`, {
                 method: "DELETE"
             })
             const remaining = orders.filter(data => data._id !== id);
