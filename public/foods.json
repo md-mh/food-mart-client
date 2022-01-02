@@ -1,0 +1,212 @@
+[
+  {
+    "title": "Malta",
+    "price": 299,
+    "description": "Malta, a variety of orange, is a popular citrus fruit cultivated in hot climate. The fruit is rich in mineral salts and other ingredients of nutritive value such as iron, lime, phosphorus, and vital minerals.",
+    "img": "https://i.ibb.co/wSNXqQ2/Malta.webp",
+    "status": "Pending",
+    "category": "Fruits",
+    "availableProducts": 10,
+    "totalSell": 5
+  },
+  {
+    "title": "Strawberry",
+    "price": 320,
+    "description": "The garden strawberry is a widely grown hybrid species of the genus Fragaria, collectively known as the strawberries, which are cultivated worldwide for their fruit.",
+    "img": "https://i.ibb.co/8dqG7sd/Strawberry.webp",
+    "status": "Pending",
+    "category": "Fruits",
+    "availableProducts": 14,
+    "totalSell": 3
+  },
+  {
+    "title": "Banana",
+    "price": 39,
+    "description": "A banana is an elongated, edible fruit – botanically a berry – produced by several kinds of large herbaceous flowering plants in the genus Musa.",
+    "img": "https://i.ibb.co/TrLhzYs/Banana.webp",
+    "status": "Pending",
+    "category": "Fruits",
+    "availableProducts": 12,
+    "totalSell": 6
+  },
+  {
+    "title": "Guava",
+    "price": 89,
+    "description": "Guava is a tropical fruit rich in high-profile nutrients. Thai guavas are generally the size of a softball with apple green skin that can range from bumpy to smooth.",
+    "img": "https://i.ibb.co/MC7Bw2Z/Guava.webp",
+    "status": "Pending",
+    "category": "Fruits",
+    "availableProducts": 20,
+    "totalSell": 9
+  },
+  {
+    "title": "Grapes",
+    "price": 99,
+    "description": "The combination of unique texture and sweet, tart flavor has made Red Grapes an extra-ordinary fruit. Red Grapes are small round or oval berries that feature semi-translucent flesh encased by a smooth skin.",
+    "img": "https://i.ibb.co/dMSrqmm/Grapes.webp",
+    "status": "Pending",
+    "category": "Fruits",
+    "availableProducts": 15,
+    "totalSell": 7
+  },
+  {
+    "title": "Potato",
+    "price": 22,
+    "description": "Buy regular potato from us which provides you with dietary fiber, potassium, vitamins, etc. Regular potato provides 9-10 percent of your daily need.",
+    "img": "https://i.ibb.co/T1h3n5X/Potato.webp",
+    "status": "Pending",
+    "category": "Vegetables",
+    "availableProducts": 22,
+    "totalSell": 10
+  },
+  {
+    "title": "Onion",
+    "price": 55,
+    "description": "Though all vegetables are important for health, certain kinds offer unique benefits.Onions are members of the Allium genus of flowering plants that also includes garlic, shallots, leeks and chives.",
+    "img": "https://i.ibb.co/5vw0WT7/Onion.webp",
+    "status": "Pending",
+    "category": "Vegetables",
+    "availableProducts": 30,
+    "totalSell": 8
+  },
+  {
+    "title": "Cauliflower",
+    "price": 35,
+    "description": "Cauliflower is as good a source of fiber and vitamins.Its ingredients may help strengthen bones, boost the cardiovascular system, and prevent cancer.",
+    "img": "https://i.ibb.co/1X8kg20/Cauliflower.webp",
+    "status": "Pending",
+    "category": "Vegetables",
+    "availableProducts": 25,
+    "totalSell": 11
+  },
+  {
+    "title": "Tomato",
+    "price": 29,
+    "description": "The tomato is consumed in diverse ways, including raw, as an ingredient in many dishes, sauces, salads, and drinks. While it is botanically a fruit, it is considered a vegetable for culinary purposes.",
+    "img": "https://i.ibb.co/4fxzQYk/Tomato.webp",
+    "status": "Pending",
+    "category": "Vegetables",
+    "availableProducts": 29,
+    "totalSell": 6
+  },
+  {
+    "title": "Carrot",
+    "price": 29,
+    "description": "Fresh Carrots pre-packed for your convenience. Carrots are an excellent source of vitamin a and they help promote heart, eye, brain, skin and liver health. Best eaten raw for maximum health benefits.",
+    "img": "https://i.ibb.co/PCthVWk/Carrot.webp",
+    "status": "Pending",
+    "category": "Vegetables",
+    "availableProducts": 29,
+    "totalSell": 6
+  },
+  {
+    "title": "Cabbage",
+    "price": 35,
+    "description": "Cabbage structurally consists of clusters of stiff leaves superimposed in compact layers, allowing it to aquire round or globular shape vegetable.",
+    "img": "https://i.ibb.co/9bBxCcW/Cabbage.webp",
+    "status": "Pending",
+    "category": "Vegetables",
+    "availableProducts": 21,
+    "totalSell": 4
+  },
+  {
+    "title": "Broiler Chicken",
+    "price": 279,
+    "description": "These are the Farm Chicken titled Shonalika collected from Mymensingh Region. Available round the year. Available fully dressed without skin.",
+    "img": "https://i.ibb.co/KDwqNS2/Broiler-Chicken.webp",
+    "status": "Pending",
+    "category": "Meat",
+    "availableProducts": 16,
+    "totalSell": 8
+  },
+  {
+    "title": "Beef Bone",
+    "price": 569,
+    "description": "Premium quality locally sourced. Meat, such as beef, is mainly composed of protein. Usually eaten as roasts, ribs, or steaks, beef is also commonly ground or minced.",
+    "img": "https://i.ibb.co/PjYpB6p/Beef-Bone.webp",
+    "status": "Pending",
+    "category": "Meat",
+    "availableProducts": 22,
+    "totalSell": 12
+  },
+  {
+    "title": "Deshi Duck",
+    "price": 459,
+    "description": "Duck is the common title for numerous species of waterfowl in the family Anatidae. Ducks are generally smaller and shorter-necked than swans and geese, which are members of the same family.",
+    "img": "https://i.ibb.co/GVmNmxz/Deshi-Duck.webp",
+    "status": "Pending",
+    "category": "Meat",
+    "availableProducts": 12,
+    "totalSell": 2
+  },
+  {
+    "title": "Mutton Paya",
+    "price": 700,
+    "description": "Mutton refers to the flesh of the mature ram or ewe at least one year old; the meat of sheep between 12 and 20 months old may be called yearling mutton.",
+    "img": "https://i.ibb.co/q7n0mwG/Mutton-Paya.webp",
+    "status": "Pending",
+    "category": "Meat",
+    "availableProducts": 17,
+    "totalSell": 4
+  },
+  {
+    "title": "Pigeon Meat",
+    "price": 155,
+    "description": "Pigeons are bred for meat, generally called squab and harvested from young birds. Pigeons grow to a very large size in the nest before they are fledged.",
+    "img": "https://i.ibb.co/CtWL9Lb/Pigeon-Meat.webp",
+    "status": "Pending",
+    "category": "Meat",
+    "availableProducts": 17,
+    "totalSell": 4
+  },
+  {
+    "title": "Rui Fish",
+    "price": 319,
+    "description": "The rohu, rui, or roho labeo is a species of fish of the carp family, found in rivers in South Asia. It is a large omnivore and extensively used in aquaculture.",
+    "img": "https://i.ibb.co/k1nDD3R/Rui-Fish.webp",
+    "status": "Pending",
+    "category": "Fish",
+    "availableProducts": 20,
+    "totalSell": 6
+  },
+  {
+    "title": "Rupchanda Fish",
+    "price": 349,
+    "description": "Pomfrets are perciform fishes belonging to the family Bramidae. The family currently includes 20 species across seven genera.",
+    "img": "https://i.ibb.co/7nzqhkX/Rupchanda-Fish.webp",
+    "status": "Pending",
+    "category": "Fish",
+    "availableProducts": 25,
+    "totalSell": 1
+  },
+  {
+    "title": "Catla Fish",
+    "price": 509,
+    "description": "Catla is a fish with large and broad head, a large protruding lower jaw, and upturned mouth. It has large, greyish scales on its dorsal side.",
+    "img": "https://i.ibb.co/RcjQJXC/Catla-Fish.webp",
+    "status": "Pending",
+    "category": "Fish",
+    "availableProducts": 15,
+    "totalSell": 5
+  },
+  {
+    "title": "Hilsha Fish",
+    "price": 700,
+    "description": "Bangladesh this fish is prepared in varity of way like it can be smoked, fried, steamed, baked, prepared with mustard seed paste, curd, brinjal (eggplant).",
+    "img": "https://i.ibb.co/RPrmXs8/Hilsha-Fish.webp",
+    "status": "Pending",
+    "category": "Fish",
+    "availableProducts": 19,
+    "totalSell": 3
+  },
+  {
+    "title": "Golda Chingri",
+    "price": 369,
+    "description": "Golda Chingri is a commercially important species of palaemonid freshwater prawn. It is found throughout the tropical and subtropical areas of the Indo-Pacific region, from India to Southeast Asia and Northern Australia.",
+    "img": "https://i.ibb.co/RbHWrfR/Golda-Chingri.webp",
+    "status": "Pending",
+    "category": "Fish",
+    "availableProducts": 35,
+    "totalSell": 6
+  }
+]

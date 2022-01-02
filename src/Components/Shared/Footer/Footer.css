@@ -1,0 +1,10 @@
+footer{
+    background-image: url("https://i.ibb.co/CJ75WT4/concept-healthy-eating-top-view-23-2148502279.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;  
+    color: rgb(48, 2, 2);
+}
+footer svg{
+    color: rgb(70, 27, 27);
+    margin: 5px 10px;
+}
