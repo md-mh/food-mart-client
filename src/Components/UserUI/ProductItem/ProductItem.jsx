@@ -18,10 +18,8 @@ const ProductItem = (props) => {
                     <Card.Body>
 
                         <Container>
-                            <div className="d-flex justify-content-between align-items-center">
-                                <h4>{title}</h4>
-                                <span><span className="fw-bold">Cost:</span> {price}tk</span>
-                            </div>
+                            <h4>{title}</h4>
+                            <h5><span className="fw-bold">Cost:</span> {price}tk</h5>
                             <br />
                             <div className="d-flex justify-content-between align-items-center">
                                 <Button onClick={() => setLgShow(true)}>See Details</Button>

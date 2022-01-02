@@ -68,14 +68,14 @@ const Header = () => {
                 </Container >
             </Navbar >
 
-            {/* Dashboard Menu Components for Mobile Device */}
+            {/* Menu Components for Mobile Device */}
             < Offcanvas show={show} onHide={handleClose} >
                 <Offcanvas.Header closeButton>
                     <Offcanvas.Title> Category </Offcanvas.Title>
                 </Offcanvas.Header>
                 <Offcanvas.Body>
 
-
+                    <h1>Filter</h1>
 
 
                 </Offcanvas.Body>
