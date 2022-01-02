@@ -5,21 +5,12 @@ import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 
 // Home Page Review Component
 const Review = () => {
-<<<<<<< HEAD
-    const [reviews, setReviews] = useState([]);
-    useEffect(() => {
-        fetch('https://morning-refuge-65051.herokuapp.com/review/')
-            .then(res => res.json())
-            .then(data => setReviews(data));
-    }, []);
-=======
   const [reviews, setReviews] = useState([]);
   useEffect(() => {
     fetch("https://morning-refuge-65051.herokuapp.com/review/")
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, []);
->>>>>>> hafiz
 
   return (
     <Container className="my-5">

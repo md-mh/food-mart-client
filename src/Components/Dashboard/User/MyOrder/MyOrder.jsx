@@ -4,16 +4,6 @@ import useAuth from "../../../../Hooks/useAuth";
 
 // My Order page Components
 const MyOrder = () => {
-<<<<<<< HEAD
-    const { user } = useAuth();
-    const [orders, setOrders] = useState([]);
-    const [myorder, setMyorder] = useState([]);
-    useEffect(() => {
-        fetch('https://morning-refuge-65051.herokuapp.com/order')
-            .then(res => res.json())
-            .then(data => setOrders(data))
-    }, [])
-=======
   const { user } = useAuth();
   const [orders, setOrders] = useState([]);
   const [myorder, setMyorder] = useState([]);
@@ -22,25 +12,12 @@ const MyOrder = () => {
       .then((res) => res.json())
       .then((data) => setOrders(data));
   }, []);
->>>>>>> hafiz
 
   useEffect(() => {
     const foundOrder = orders.filter((order) => order.email === user.email);
     setMyorder(foundOrder);
   }, [orders, user.email]);
 
-<<<<<<< HEAD
-    // Delete an order 
-    const handleDelete = id => {
-        const confirm = window.confirm("Are you wants to delete ?");
-        if (confirm) {
-            fetch(`https://morning-refuge-65051.herokuapp.com/order/${id}`, {
-                method: "DELETE"
-            })
-            const remaining = orders.filter(data => data._id !== id);
-            setOrders(remaining);
-        }
-=======
   // Delete an order
   const handleDelete = (id) => {
     const confirm = window.confirm("Are you wants to delete ?");
@@ -50,7 +27,6 @@ const MyOrder = () => {
       });
       const remaining = orders.filter((data) => data._id !== id);
       setOrders(remaining);
->>>>>>> hafiz
     }
   };
   return (

@@ -89,60 +89,11 @@ const useFirebase = () => {
     }).then();
   };
 
-<<<<<<< HEAD
-    const logOut = () => {
-        signOut(auth)
-            .then(() => { })
-            .finally(() => { setLoading(false) });
-    }
-
-    const saveUser = (email, displayName, method) => {
-        const user = { email, displayName };
-        const url = 'https://morning-refuge-65051.herokuapp.com/user';
-        fetch(url, {
-            method: method,
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(user)
-        })
-            .then()
-    }
-
-    useEffect(() => {
-        fetch(`https://morning-refuge-65051.herokuapp.com/user/${user.email}`)
-            .then(res => res.json())
-            .then(data => setAdmin(data.admin))
-    }, [user.email])
-
-    const unsubscribe = useEffect(() => {
-        onAuthStateChanged(auth, user => {
-            if (user) {
-                setUser(user);
-            } else {
-                setUser({});
-            }
-            setLoading(false);
-        })
-        return () => unsubscribe;
-    }, [])
-    return {
-        user,
-        admin,
-        error,
-        loading,
-        registrationUsingEmail,
-        signInUsingEmail,
-        signInUsingGoogle,
-        logOut
-    }
-=======
   useEffect(() => {
     fetch(`https://morning-refuge-65051.herokuapp.com/user/${user.email}`)
       .then((res) => res.json())
       .then((data) => setAdmin(data.admin));
   }, [user.email]);
->>>>>>> hafiz
 
   const unsubscribe = useEffect(() => {
     onAuthStateChanged(auth, (user) => {

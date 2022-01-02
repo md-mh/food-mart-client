@@ -6,27 +6,6 @@ const ManageOrder = () => {
   const [orders, setOrders] = useState([]);
   const [oneOrder, setOneOrder] = useState({});
 
-<<<<<<< HEAD
-    const [orders, setOrders] = useState([]);
-    const [oneOrder, setOneOrder] = useState({});
-
-    useEffect(() => {
-        fetch('https://morning-refuge-65051.herokuapp.com/order')
-            .then(res => res.json())
-            .then(data => setOrders(data))
-    }, [])
-
-    // Delete an order 
-    const handleDelete = id => {
-        const confirm = window.confirm("Are you wants to delete ?");
-        if (confirm) {
-            fetch(`https://morning-refuge-65051.herokuapp.com/order/${id}`, {
-                method: "DELETE"
-            })
-            const remaining = orders.filter(data => data._id !== id);
-            setOrders(remaining);
-        }
-=======
   useEffect(() => {
     fetch("https://morning-refuge-65051.herokuapp.com/order")
       .then((res) => res.json())
@@ -42,7 +21,6 @@ const ManageOrder = () => {
       });
       const remaining = orders.filter((data) => data._id !== id);
       setOrders(remaining);
->>>>>>> hafiz
     }
   };
 
@@ -69,36 +47,6 @@ const ManageOrder = () => {
       setOrders(updateOrder);
       console.log(oneOrder.status);
 
-<<<<<<< HEAD
-    // Update status 
-    const handleUpdateStatus = id => {
-        const url = `https://morning-refuge-65051.herokuapp.com/order/${id}`;
-
-        fetch(url)
-            .then(res => res.json())
-            .then(data => setOneOrder(data));
-        console.log(oneOrder.status);
-        if (oneOrder.status === "Pending") {
-            oneOrder.status = "Shipped";
-            const updateOrder = { name: oneOrder.name, email: oneOrder.email, title: oneOrder.title, mobile: oneOrder.mobile, price: oneOrder.price, address: oneOrder.address, status: oneOrder.status };
-            setOneOrder(updateOrder);
-            setOrders(updateOrder);
-            console.log(oneOrder.status);
-
-            fetch(url, {
-                method: 'PUT',
-                headers: {
-                    'content-type': 'application/json'
-                },
-                body: JSON.stringify(oneOrder)
-            })
-            alert('Status Update Successful');
-            const update = orders;
-            setOrders(update);
-
-        }
-
-=======
       fetch(url, {
         method: "PUT",
         headers: {
@@ -109,7 +57,6 @@ const ManageOrder = () => {
       alert("Status Update Successful");
       const update = orders;
       setOrders(update);
->>>>>>> hafiz
     }
   };
   return (

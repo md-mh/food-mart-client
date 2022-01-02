@@ -10,25 +10,6 @@ const ManageProduct = () => {
       .then((data) => setServices(data));
   }, []);
 
-<<<<<<< HEAD
-    const [services, setServices] = useState([]);
-    useEffect(() => {
-        fetch('https://morning-refuge-65051.herokuapp.com/food')
-            .then(res => res.json())
-            .then(data => setServices(data));
-    }, []);
-
-    // Delete a product
-    const handleDelete = id => {
-        const confirm = window.confirm("Are you wants to delete?");
-        if (confirm) {
-            fetch(`https://morning-refuge-65051.herokuapp.com/food/${id}`, {
-                method: "DELETE"
-            })
-            const remaining = services.filter(data => data._id !== id);
-            setServices(remaining);
-        }
-=======
   // Delete a product
   const handleDelete = (id) => {
     const confirm = window.confirm("Are you wants to delete?");
@@ -38,7 +19,6 @@ const ManageProduct = () => {
       });
       const remaining = services.filter((data) => data._id !== id);
       setServices(remaining);
->>>>>>> hafiz
     }
   };
 
