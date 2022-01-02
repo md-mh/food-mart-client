@@ -1,0 +1,12 @@
+button.dashboardCanvas {
+    display: none;
+}
+
+@media screen and (max-width: 767px) {
+    button.dashboardCanvas{
+        display: block;
+    }
+    .dashboardMenu{
+        display: none;
+    }
+}
