@@ -39,13 +39,14 @@ const MyOrder = () => {
         setOrders(remaining);
       }
     });
-
-
   };
   return (
     <Container>
-      <Row className='justify-content-center my-3'>
-        <h4 className='heading text-center mb-4'><span className="span">My Order</span></h4> <br />
+      <Row className="justify-content-center my-3">
+        <h4 className="heading text-center mb-4">
+          <span className="span">My Order</span>
+        </h4>{" "}
+        <br />
         <Col md={11}>
           <Table>
             <thead>
@@ -63,7 +64,7 @@ const MyOrder = () => {
                   <td>{order.name}</td>
                   <td>
                     {" "}
-                    <button className='btn my-btn'>
+                    <button className="btn my-btn">
                       {order.status}
                       <span></span>
                       <span></span>
@@ -73,8 +74,9 @@ const MyOrder = () => {
                   </td>
                   <td>
                     <button
-                      className='btn my-btn'
-                      onClick={() => handleDelete(order._id)}>
+                      className="btn my-btn"
+                      onClick={() => handleDelete(order._id)}
+                    >
                       <span></span>
                       <span></span>
                       <span></span>

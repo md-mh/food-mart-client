@@ -70,10 +70,8 @@ const Products = () => {
           ></Filter>
         </Col>
         <Col md={10}>
-          <Container className="my-3 py-3">
-            <h1 className="py-3">
-              Order the <span className="text-primary">food</span> you need
-            </h1>
+          <Container className="my-4 px-5">
+            <h1 className="heading my-5"><span className="span">Order fresh <span className="text-primary">food</span></span></h1>
             <Form.Control
               type="text"
               onChange={handelSearch}

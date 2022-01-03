@@ -80,8 +80,11 @@ const ManageOrder = () => {
   };
   return (
     <Container>
-      <Row className='justify-content-center my-3'>
-        <h4 className='heading mb-4'><span className="span">Manage Order</span></h4> <br />
+      <Row className="justify-content-center my-3">
+        <h4 className="heading mb-4">
+          <span className="span">Manage Order</span>
+        </h4>{" "}
+        <br />
         <Col>
           <Table>
             <thead>
@@ -102,9 +105,10 @@ const ManageOrder = () => {
                   <td>
                     {" "}
                     <button
-                      title='Clicked Panding to Shipped'
-                      className='btn  my-btn'
-                      onClick={() => handleUpdateStatus(order._id)}>
+                      title="Clicked Panding to Shipped"
+                      className="btn  my-btn"
+                      onClick={() => handleUpdateStatus(order._id)}
+                    >
                       {order.status}
                       <span></span>
                       <span></span>
@@ -114,8 +118,9 @@ const ManageOrder = () => {
                   </td>
                   <td>
                     <button
-                      className='btn  my-btn'
-                      onClick={() => handleDelete(order._id)}>
+                      className="btn  my-btn"
+                      onClick={() => handleDelete(order._id)}
+                    >
                       <span></span>
                       <span></span>
                       <span></span>

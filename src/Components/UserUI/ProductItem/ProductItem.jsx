@@ -13,23 +13,23 @@ const ProductItem = (props) => {
   return (
     <>
       <Col>
-        {/* single service card */}
-        <Card className='card my-card'>
-          <div className='img-hover'>
-            <Card.Img variant='top' src={img} className='card-img' />
+        {/* single food card */}
+        <Card className="card my-card">
+          <div className="img-hover">
+            <Card.Img variant="top" src={img} className="card-img" />
           </div>
           <Card.Body>
             <Container>
-              <div className='d-flex justify-content-between align-items-center'>
+              <div className="d-flex justify-content-between align-items-center">
                 <h4>{title}</h4>
-                <h4>৳ : {price}</h4>
+                <h4>৳{price}</h4>
               </div>
               <br />
-              <div className='d-flex justify-content-between align-items-center'>
-                <button className='btn-buy' onClick={() => setLgShow(true)}>
+              <div className="d-flex justify-content-between align-items-center">
+                <button className="btn-buy" onClick={() => setLgShow(true)}>
                   <span>See Details</span>
                 </button>
-                <Link className='btn-buy' to={`/placeOrder/${_id}`}>
+                <Link className="btn-buy" to={`/placeOrder/${_id}`}>
                   {" "}
                   <span>Buy now</span>{" "}
                 </Link>
@@ -40,12 +40,13 @@ const ProductItem = (props) => {
       </Col>
 
       <Modal
-        size='lg'
+        size="lg"
         show={lgShow}
         onHide={() => setLgShow(false)}
-        aria-labelledby='example-modal-sizes-title-lg'>
+        aria-labelledby="example-modal-sizes-title-lg"
+      >
         <Modal.Header closeButton>
-          <Modal.Title id='example-modal-sizes-title-lg'>{title}</Modal.Title>
+          <Modal.Title id="example-modal-sizes-title-lg">{title}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Container>
@@ -53,24 +54,24 @@ const ProductItem = (props) => {
               <Col>
                 <Card.Img src={img} />
               </Col>
-              <Col className='py-4'>
+              <Col className="py-4">
                 <p>
-                  <span className='fw-bold'>Details:</span> {description}
+                  <span className="fw-bold">Details:</span> {description}
                 </p>
                 <p>
-                  <span className='fw-bold'>Category:</span> {category}
+                  <span className="fw-bold">Category:</span> {category}
                 </p>
                 <p>
-                  <span className='fw-bold'>Available:</span>{" "}
+                  <span className="fw-bold">Available:</span>{" "}
                   {availableProducts}
                 </p>
-                <div className='d-flex justify-content-between align-items-center'>
+                <div className="d-flex justify-content-between align-items-center">
                   <span>
-                    <span className='fw-bold'>Cost:</span> {price}tk
+                    <span className="fw-bold">Cost:</span> {price}tk
                   </span>
                   <Link to={`/placeOrder/${_id}`}>
                     {" "}
-                    <button className='btn-buy'>
+                    <button className="btn-buy">
                       {" "}
                       <span>Buy Now</span>{" "}
                     </button>{" "}

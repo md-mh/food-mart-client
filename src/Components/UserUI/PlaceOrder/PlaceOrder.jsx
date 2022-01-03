@@ -51,62 +51,62 @@ const PlaceOrder = () => {
   return (
     <>
       <Container>
-        <Row className='justify-content-center my-5'>
-          <h1 className='text-center mb-5'>Place Your Order</h1>
+        <Row className="justify-content-center my-5">
+          <h1 className="text-center mb-5">Place Your Order</h1>
 
           <Col md={6}>
-            <img src={serviceDetails?.img} alt='img' />
-            <h3 className='fw-bold'> {serviceDetails?.title}</h3>
+            <img src={serviceDetails?.img} alt="img" />
+            <h3 className="fw-bold"> {serviceDetails?.title}</h3>
             <p>
-              <span className='fw-bold'>Details:</span>{" "}
+              <span className="fw-bold">Details:</span>{" "}
               {serviceDetails?.description}
             </p>
             <p>
-              <span className='fw-bold'>Price:</span> {serviceDetails?.price}tk
+              <span className="fw-bold">Price:</span> {serviceDetails?.price}tk
             </p>
           </Col>
 
           <Col md={6}>
-            <Form onSubmit={handleOrder} className='py-5 left my-form'>
-              <Form.Group className='mb-3 label' controlId='formBasicName'>
-                <Form.Label className='label'>Name</Form.Label>
+            <Form onSubmit={handleOrder} className="py-5 left my-form">
+              <Form.Group className="mb-3 label" controlId="formBasicName">
+                <Form.Label className="label">Name</Form.Label>
                 <Form.Control
-                  className='input'
-                  type='text'
+                  className="input"
+                  type="text"
                   value={user.displayName}
                 />
               </Form.Group>
-              <Form.Group className='mb-3 label' controlId='formBasicEmail'>
-                <Form.Label className='label'>Email</Form.Label>
+              <Form.Group className="mb-3 label" controlId="formBasicEmail">
+                <Form.Label className="label">Email</Form.Label>
                 <Form.Control
-                  className='input'
-                  type='text'
+                  className="input"
+                  type="text"
                   value={user.email}
                 />
               </Form.Group>
 
-              <Form.Group className='mb-3 label' controlId='formBasicPassword'>
+              <Form.Group className="mb-3 label" controlId="formBasicPassword">
                 <Form.Label>Mobile Number</Form.Label>
                 <Form.Control
-                  className='input'
-                  type='number'
-                  placeholder='Write your Mobile number'
+                  className="input"
+                  type="number"
+                  placeholder="Write your Mobile number"
                   ref={mobileRef}
                   required
                 />
               </Form.Group>
 
-              <Form.Group className='mb-3 label' controlId='formBasic'>
-                <Form.Label className='label'>Address</Form.Label>
+              <Form.Group className="mb-3 label" controlId="formBasic">
+                <Form.Label className="label">Address</Form.Label>
                 <Form.Control
-                  className='input'
-                  as='textarea'
-                  placeholder='Write your address'
+                  className="input"
+                  as="textarea"
+                  placeholder="Write your address"
                   style={{ height: "100px" }}
                   ref={addressRef}
                 />
               </Form.Group>
-              <button className='btn my-btn' type='submit'>
+              <button className="btn my-btn" type="submit">
                 <span></span>
                 <span></span>
                 <span></span>

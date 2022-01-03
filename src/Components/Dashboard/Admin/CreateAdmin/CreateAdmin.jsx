@@ -31,23 +31,26 @@ const CreateAdmin = () => {
   };
   return (
     <Container>
-      <Row className=''>
-        <Col md={8} className='py-3 offset-md-2'>
-          <h1 className='text-center py-3 mb-4 heading'><span className="span">Make Admin</span></h1>
+      <Row className="">
+        <Col md={8} className="py-3 offset-md-2">
+          <h1 className="text-center py-3 mb-4 heading">
+            <span className="span">Make Admin</span>
+          </h1>
           <Form
             onSubmit={handleAddAdmin}
             style={{ textAlign: "left" }}
-            className='py-4 shadow-lg rounded-3'>
-            <Form.Group className='mb-3 w-100' controlId='formBasicEmail'>
-              <Form.Label className='fs-2'>Email Address</Form.Label>
+            className="py-4 shadow-lg rounded-3"
+          >
+            <Form.Group className="mb-3 w-100" controlId="formBasicEmail">
+              <Form.Label className="fs-2">Email Address</Form.Label>
               <Form.Control
-                name='email'
-                type='email'
-                placeholder='Enter email'
+                name="email"
+                type="email"
+                placeholder="Enter email"
                 ref={emailAddress}
               />
             </Form.Group>
-            <button className='btn my-btn fw-bold' type='submit'>
+            <button className="btn my-btn fw-bold" type="submit">
               <span></span>
               <span></span>
               <span></span>

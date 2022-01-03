@@ -37,8 +37,11 @@ const ManageProduct = () => {
 
   return (
     <Container>
-      <h4 className='heading'><span className="span">Manage Products</span></h4> <br />
-      <Row className='justify-content-center'>
+      <h4 className="heading">
+        <span className="span">Manage Products</span>
+      </h4>{" "}
+      <br />
+      <Row className="justify-content-center">
         <Col>
           <Table>
             <thead>
@@ -53,14 +56,15 @@ const ManageProduct = () => {
               <tbody key={service._id} service={service}>
                 <tr>
                   <td>
-                    <img src={service.img} className='featureImg' alt='' />
+                    <img src={service.img} className="featureImg" alt="" />
                   </td>
                   <td>{service.title}</td>
                   <td>{service.price}</td>
                   <td className="text-center">
                     <button
-                      className='btn  my-btn'
-                      onClick={() => handleDelete(service._id)}>
+                      className="btn  my-btn"
+                      onClick={() => handleDelete(service._id)}
+                    >
                       <span></span>
                       <span></span>
                       <span></span>

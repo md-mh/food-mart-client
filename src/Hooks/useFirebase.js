@@ -1,6 +1,15 @@
-import { createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  getAuth,
+  GoogleAuthProvider,
+  onAuthStateChanged,
+  signInWithEmailAndPassword,
+  signInWithPopup,
+  signOut,
+  updateProfile,
+} from "firebase/auth";
 import { useEffect, useState } from "react";
-import Swal from 'sweetalert2';
+import Swal from "sweetalert2";
 import initialzeAuthentization from "../Firebase/firebase.init";
 
 initialzeAuthentization();
@@ -61,14 +70,15 @@ const useFirebase = () => {
       });
   };
 
-
   const logOut = () => {
     signOut(auth)
       .then(() => {
-        logInSms()
+        logInSms();
       })
-      .finally(() => { setLoading(false) });
-  }
+      .finally(() => {
+        setLoading(false);
+      });
+  };
 
   const saveUser = (email, displayName, method) => {
     const user = { email, displayName };
@@ -85,9 +95,9 @@ const useFirebase = () => {
 
   useEffect(() => {
     fetch(`https://morning-refuge-65051.herokuapp.com/user/${user.email}`)
-      .then(res => res.json())
-      .then(data => setAdmin(data.admin))
-  }, [user.email])
+      .then((res) => res.json())
+      .then((data) => setAdmin(data.admin));
+  }, [user.email]);
 
   const unsubscribe = useEffect(() => {
     onAuthStateChanged(auth, user => {
@@ -99,35 +109,19 @@ const useFirebase = () => {
       setLoading(false);
     })
     return () => unsubscribe;
-  }, [])
+  }, []);
   const logInSmsE = () => {
-    Swal.fire(
-      'Opps',
-      'Something wrong',
-      'error'
-    )
-  }
+    Swal.fire("Opps", "Something wrong", "error");
+  };
   const registerSms = () => {
-    Swal.fire(
-      'Well Done',
-      'You have successfully Register',
-      'success'
-    )
-  }
+    Swal.fire("Well Done", "You have successfully Register", "success");
+  };
   const logInSms = () => {
-    Swal.fire(
-      'Well Done',
-      'You have successfully Login',
-      'success'
-    )
-  }
+    Swal.fire("Well Done", "You have successfully Login", "success");
+  };
   const deleteSms = () => {
-    Swal.fire(
-      'Well Done',
-      'You have successfully Delete Product',
-      'success'
-    )
-  }
+    Swal.fire("Well Done", "You have successfully Delete Product", "success");
+  };
 
   return {
     user,
@@ -137,8 +131,12 @@ const useFirebase = () => {
     registrationUsingEmail,
     signInUsingEmail,
     signInUsingGoogle,
-    logOut, logInSms, registerSms, logInSmsE, deleteSms
-  }
+    logOut,
+    logInSms,
+    registerSms,
+    logInSmsE,
+    deleteSms,
+  };
 };
 
 export default useFirebase;

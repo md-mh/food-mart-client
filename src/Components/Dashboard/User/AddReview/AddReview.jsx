@@ -20,39 +20,46 @@ const AddReview = () => {
   };
   return (
     <Container>
-      <Row className='justify-content-center'>
+      <Row className="justify-content-center">
         <Col md={10}>
-          <h4 className='heading mb-4'><span className="span">Add Review</span></h4> <br />
-          <Form className="py-5  rounded-3 shadow-lg" style={{ textAlign: "left" }} onSubmit={handleSubmit(onSubmit)}>
-            <Form.Group className='mb-3 w-100' controlId='formBasicPassword'>
+          <h4 className="heading mb-4">
+            <span className="span">Add Review</span>
+          </h4>{" "}
+          <br />
+          <Form
+            className="py-5  rounded-3 shadow-lg"
+            style={{ textAlign: "left" }}
+            onSubmit={handleSubmit(onSubmit)}
+          >
+            <Form.Group className="mb-3 w-100" controlId="formBasicPassword">
               <Form.Label>Name</Form.Label>
               <Form.Control
-                type='text'
+                type="text"
                 {...register("name")}
                 value={user.displayName}
               />
             </Form.Group>
-            <Form.Group className='mb-3 w-100' controlId='formBasicPassword'>
+            <Form.Group className="mb-3 w-100" controlId="formBasicPassword">
               <Form.Label>Your Comment</Form.Label>
               <Form.Control
-                as='textarea'
+                as="textarea"
                 {...register("comment")}
-                placeholder='Write Your Comment'
+                placeholder="Write Your Comment"
                 style={{ height: "150px" }}
               />
             </Form.Group>
-            <Form.Group className='mb-3 w-100' controlId='formBasicPassword'>
+            <Form.Group className="mb-3 w-100" controlId="formBasicPassword">
               <Form.Label>Rating (1 to 5)</Form.Label>
               <Form.Control
-                type='number'
+                type="number"
                 {...register("rating")}
-                placeholder='Input a Rating from 1 to 5'
-                min='1'
-                max='5'
+                placeholder="Input a Rating from 1 to 5"
+                min="1"
+                max="5"
               />
             </Form.Group>
 
-            <button className='btn my-btn' type='submit'>
+            <button className="btn my-btn" type="submit">
               <span></span>
               <span></span>
               <span></span>

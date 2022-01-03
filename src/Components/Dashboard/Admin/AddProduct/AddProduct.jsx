@@ -17,44 +17,50 @@ const AddProduct = () => {
   };
   return (
     <Container>
-      <Row className='justify-content-center'>
+      <Row className="justify-content-center">
         <Col md={10}>
-          <h2 className='text-center heading mb-5'><span className="span">Add a Product</span></h2>
-          <Form className="py-5 rounded-3 shadow-lg" style={{ textAlign: "left" }} onSubmit={handleSubmit(onSubmit)}>
-            <Form.Group className='mb-3 w-100' controlId='formBasicPassword'>
+          <h2 className="text-center heading mb-5">
+            <span className="span">Add a Product</span>
+          </h2>
+          <Form
+            className="py-5 rounded-3 shadow-lg"
+            style={{ textAlign: "left" }}
+            onSubmit={handleSubmit(onSubmit)}
+          >
+            <Form.Group className="mb-3 w-100" controlId="formBasicPassword">
               <Form.Label className="fs-4">Product Name</Form.Label>
               <Form.Control
-                type='text'
+                type="text"
                 {...register("title")}
-                placeholder='Product Name'
+                placeholder="Product Name"
               />
             </Form.Group>
-            <Form.Group className='mb-3 w-100' controlId='formBasicPassword'>
+            <Form.Group className="mb-3 w-100" controlId="formBasicPassword">
               <Form.Label className="fs-4">Product Details</Form.Label>
               <Form.Control
-                as='textarea'
+                as="textarea"
                 {...register("details")}
-                placeholder='Write Product details'
+                placeholder="Write Product details"
                 style={{ height: "150px" }}
               />
             </Form.Group>
-            <Form.Group className='mb-3 w-100' controlId='formBasicPassword'>
+            <Form.Group className="mb-3 w-100" controlId="formBasicPassword">
               <Form.Label className="fs-4">Product Price</Form.Label>
               <Form.Control
-                type='number'
+                type="number"
                 {...register("price")}
-                placeholder='Product Price'
+                placeholder="Product Price"
               />
             </Form.Group>
-            <Form.Group className='mb-3 w-100' controlId='formBasicPassword'>
+            <Form.Group className="mb-3 w-100" controlId="formBasicPassword">
               <Form.Label className="fs-4">Product image url</Form.Label>
               <Form.Control
-                type='url'
+                type="url"
                 {...register("img")}
-                placeholder='Product image url'
+                placeholder="Product image url"
               />
             </Form.Group>
-            <button className='btn my-btn' type='submit'>
+            <button className="btn my-btn" type="submit">
               <span></span>
               <span></span>
               <span></span>
