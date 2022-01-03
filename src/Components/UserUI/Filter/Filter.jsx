@@ -11,6 +11,7 @@ const Filter = ({
 }) => {
   return (
     <Container>
+      <h3 className="mt-5">Filter By</h3>
       <div className="my-3"></div>
       <Button onClick={handleSellsAscending} className="filter-width mt-5">
         Sort By Sell (Ascending)

@@ -1,0 +1,12 @@
+button.filterCanvas {
+    display: none;
+}
+
+@media screen and (max-width: 1350px) {
+    button.filterCanvas{
+        display: block;
+    }
+    .filterMenu{
+        display: none;
+    }
+}

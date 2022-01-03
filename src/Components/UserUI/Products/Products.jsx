@@ -1,11 +1,18 @@
 import React, { useEffect, useState } from "react";
-import { Col, Container, Form, Row } from "react-bootstrap";
+import { Col, Container, Form, Row, Button, Offcanvas } from "react-bootstrap";
 import Filter from "../Filter/Filter";
 import ProductItem from "../ProductItem/ProductItem";
+import './Products.css'
+import { RiMenu3Fill } from "react-icons/ri";
 
 // Product Page component
 
 const Products = () => {
+
+  const [showCanvas, setshowCanvas] = useState(false);
+  const handleClose = () => setshowCanvas(false);
+  const handleShow = () => setshowCanvas(true);
+
   const [foods, setFoods] = useState([]);
   const [displayFoods, setDisplayFoods] = useState([]);
   // product filters state
@@ -59,7 +66,7 @@ const Products = () => {
   return (
     <>
       <Row>
-        <Col md={2}>
+        <Col md={2} className="filterMenu">
           <Filter
             handleSellsAscending={handleSellsAscending}
             handleSellsDescending={handleSellsDescending}
@@ -70,8 +77,40 @@ const Products = () => {
           ></Filter>
         </Col>
         <Col md={10}>
-          <Container className="my-4 px-5">
-            <h1 className="heading my-5"><span className="span">Order fresh <span className="text-primary">food</span></span></h1>
+          <Container>
+
+            <Row className="d-flex justify-content-center align-items-center">
+              <Col sm={10} className="my-4 px-5">
+                <h1 className="heading my-5"><span className="span">Order fresh <span className="text-primary">food</span></span></h1>
+              </Col>
+              <Col sm={2}>
+                <Button
+                  variant='light'
+                  className='filterCanvas'
+                  onClick={handleShow}>
+                  <RiMenu3Fill />
+                </Button>
+
+                {/* Filter Content Components for Mobile Device */}
+                <Offcanvas show={showCanvas} onHide={handleClose}>
+                  <Offcanvas.Header closeButton>
+                    <Offcanvas.Title></Offcanvas.Title>
+                  </Offcanvas.Header>
+                  <Offcanvas.Body>
+                    <Filter
+                      handleSellsAscending={handleSellsAscending}
+                      handleSellsDescending={handleSellsDescending}
+                      handlePriceAscending={handlePriceAscending}
+                      handlePriceDescending={handlePriceDescending}
+                      handleCategory={handleCategory}
+                      handleClearFilter={handleClearFilter}
+                    ></Filter>
+                  </Offcanvas.Body>
+                </Offcanvas>
+              </Col>
+
+            </Row>
+
             <Form.Control
               type="text"
               onChange={handelSearch}

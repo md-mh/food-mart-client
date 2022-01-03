@@ -1,11 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import {
-  Button,
   Container,
   DropdownButton,
   Nav,
   Navbar,
-  Offcanvas
 } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import useAuth from "../../../Hooks/useAuth";
@@ -16,24 +14,11 @@ import "./Header.css";
 const Header = () => {
   const { user, admin, logOut } = useAuth();
   const url = `/dashboard`;
-  const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
   return (
     <>
       {/* Header and navbar area  */}
       <Navbar bg='light' expand='lg' fixed='top'>
         <Container>
-          {user.email ? (
-            <Button
-              variant='light'
-              className='dashboardCanvas'
-              onClick={handleShow}>
-              <span className='navbar-toggler-icon'></span>
-            </Button>
-          ) : (
-            <span style={{ display: "none" }}></span>
-          )}
 
           <Navbar.Brand href='/' className='d-flex align-items-center '>
             <img className='logo' src={logo} alt='' />
@@ -115,15 +100,7 @@ const Header = () => {
         </Container>
       </Navbar>
 
-      {/* Dashboard Menu Components for Mobile Device */}
-      <Offcanvas show={show} onHide={handleClose}>
-        <Offcanvas.Header closeButton>
-          <Offcanvas.Title> Category </Offcanvas.Title>
-        </Offcanvas.Header>
-        <Offcanvas.Body></Offcanvas.Body>
-      </Offcanvas>
     </>
   );
 };
-
 export default Header;
