@@ -17,7 +17,7 @@ const Products = () => {
       .then((data) => setFoods(data));
   }, []);
 
-  const handelSearch = (event) => {
+  const handleSearch = (event) => {
     event.preventDefault();
     const getSearch = event.target.value;
     const getFoods = foods.filter((food) =>
@@ -76,7 +76,7 @@ const Products = () => {
             </h1>
             <Form.Control
               type="text"
-              onChange={handelSearch}
+              onChange={handleSearch}
               id="search"
               placeholder="Search our fresh foods"
               style={{ width: "70%" }}
