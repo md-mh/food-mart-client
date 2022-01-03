@@ -34,34 +34,30 @@ const Products = () => {
           <Filter></Filter>
         </Col>
         <Col lg={12} xl={9}>
-          <Container className='my-3 py-3'>
-            <h1 className='py-3 mb-4 heading'>
-              <span className='span'>
-                Order the <span className='text-primary'>food</span> you need
+          <Container className="my-3 py-3">
+            <h1 className="py-3 mb-4 heading">
+              <span className="span">
+                Order the <span className="text-primary">food</span> you need
               </span>
             </h1>
             <Form.Control
-              type='text'
+              type="text"
               onChange={handelSearch}
-              id='search'
-              placeholder='Search our fresh foods'
+              id="search"
+              placeholder="Search our fresh foods"
               style={{ width: "70%" }}
             />
 
             {/* Bootstrap responsive row */}
-            <Row xs={1} md={1} lg={2} xl={3} className='g-4 py-4'>
+            <Row xs={1} md={1} lg={2} xl={3} className="g-4 py-4">
               {
                 // mappimg data from Foods
                 displayFoods.length === 0
-                  ? foods.map((service) => (
-                      <ProductItem
-                        key={service._id}
-                        service={service}></ProductItem>
+                  ? foods.map((food) => (
+                      <ProductItem key={food._id} food={food}></ProductItem>
                     ))
-                  : displayFoods.map((service) => (
-                      <ProductItem
-                        key={service._id}
-                        service={service}></ProductItem>
+                  : displayFoods.map((food) => (
+                      <ProductItem key={food._id} food={food}></ProductItem>
                     ))
               }
             </Row>
