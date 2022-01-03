@@ -22,7 +22,10 @@ const ProductItem = (props) => {
             <Container>
               <div className="d-flex justify-content-between align-items-center">
                 <h4>{title}</h4>
-                <span className="fw-bold">Cost: {price}৳</span>
+                <span className="fw-bold">
+                  <span className="fs-5 fw-bolder">৳</span>
+                  {price}
+                </span>
               </div>
               <br />
               <div className="d-flex justify-content-between align-items-center">
