@@ -4,10 +4,10 @@ import { Container } from 'react-bootstrap';
 const Nopage = () => {
     // No page found component 
     return (
-        <Container>
-            <h1 className="m-5 p-5 text-center">Sorry, Your searching pages in not found. </h1>
+        <Container style={{ 'width': '70%', 'textAlign': 'center' }} className='my-5 px-5'>
+            <img src="https://i.ibb.co/kSrFgbr/404.jpg" alt="" />
+            <br /> <br />
         </Container>
     );
 };
-
 export default Nopage;
