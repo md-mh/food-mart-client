@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { Col, Container, Row, Table, Button } from "react-bootstrap";
+import { Col, Container, Row, Table } from "react-bootstrap";
+import Swal from "sweetalert2";
 import useAuth from "../../../../Hooks/useAuth";
 
 // My Order page Components
 const MyOrder = () => {
-  const { user } = useAuth();
+  const { user, deleteSms } = useAuth();
   const [orders, setOrders] = useState([]);
   const [myorder, setMyorder] = useState([]);
   useEffect(() => {
@@ -20,19 +21,32 @@ const MyOrder = () => {
 
   // Delete an order
   const handleDelete = (id) => {
-    const confirm = window.confirm("Are you wants to delete ?");
-    if (confirm) {
-      fetch(`https://morning-refuge-65051.herokuapp.com/order/${id}`, {
-        method: "DELETE",
-      });
-      const remaining = orders.filter((data) => data._id !== id);
-      setOrders(remaining);
-    }
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`https://morning-refuge-65051.herokuapp.com/order/${id}`, {
+          method: "DELETE",
+        });
+        deleteSms();
+        const remaining = orders.filter((data) => data._id !== id);
+        setOrders(remaining);
+      }
+    });
   };
   return (
     <Container>
       <Row className="justify-content-center my-3">
-        <h2 className="text-center">My Order</h2>
+        <h4 className="heading text-center mb-4">
+          <span className="span">My Order</span>
+        </h4>{" "}
+        <br />
         <Col md={11}>
           <Table>
             <thead>
@@ -50,15 +64,25 @@ const MyOrder = () => {
                   <td>{order.name}</td>
                   <td>
                     {" "}
-                    <Button className="btn-warning">{order.status}</Button>{" "}
+                    <button className="btn my-btn">
+                      {order.status}
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </button>{" "}
                   </td>
                   <td>
-                    <Button
-                      className="btn-danger"
+                    <button
+                      className="btn my-btn"
                       onClick={() => handleDelete(order._id)}
                     >
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span></span>
                       Delete
-                    </Button>
+                    </button>
                   </td>
                 </tr>
               </tbody>

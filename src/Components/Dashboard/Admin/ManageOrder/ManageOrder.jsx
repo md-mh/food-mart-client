@@ -1,27 +1,46 @@
 import React, { useEffect, useState } from "react";
-import { Col, Container, Row, Table, Button } from "react-bootstrap";
+import { Col, Container, Row, Table } from "react-bootstrap";
+import Swal from "sweetalert2";
+import useAuth from "../../../../Hooks/useAuth";
 
 // Manage Order page Components
 const ManageOrder = () => {
   const [orders, setOrders] = useState([]);
   const [oneOrder, setOneOrder] = useState({});
-
+  const statusSms = () => {
+    Swal.fire(
+      "Well Done",
+      "You have successfully Update Product Status",
+      "success"
+    );
+  };
+  const { deleteSms } = useAuth();
   useEffect(() => {
     fetch("https://morning-refuge-65051.herokuapp.com/order")
       .then((res) => res.json())
       .then((data) => setOrders(data));
-  }, []);
+  }, [orders]);
 
   // Delete an order
   const handleDelete = (id) => {
-    const confirm = window.confirm("Are you wants to delete ?");
-    if (confirm) {
-      fetch(`https://morning-refuge-65051.herokuapp.com/order/${id}`, {
-        method: "DELETE",
-      });
-      const remaining = orders.filter((data) => data._id !== id);
-      setOrders(remaining);
-    }
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`https://morning-refuge-65051.herokuapp.com/order/${id}`, {
+          method: "DELETE",
+        });
+        deleteSms();
+        const remaining = orders.filter((data) => data._id !== id);
+        setOrders(remaining);
+      }
+    });
   };
 
   // Update status
@@ -54,7 +73,7 @@ const ManageOrder = () => {
         },
         body: JSON.stringify(oneOrder),
       });
-      alert("Status Update Successful");
+      statusSms();
       const update = orders;
       setOrders(update);
     }
@@ -62,7 +81,10 @@ const ManageOrder = () => {
   return (
     <Container>
       <Row className="justify-content-center my-3">
-        <h2 className="text-center">Manage Order</h2>
+        <h4 className="heading mb-4">
+          <span className="span">Manage Order</span>
+        </h4>{" "}
+        <br />
         <Col>
           <Table>
             <thead>
@@ -82,21 +104,29 @@ const ManageOrder = () => {
                   <td>{order.email}</td>
                   <td>
                     {" "}
-                    <Button
+                    <button
                       title="Clicked Panding to Shipped"
-                      className="btn-warning"
+                      className="btn  my-btn"
                       onClick={() => handleUpdateStatus(order._id)}
                     >
                       {order.status}
-                    </Button>{" "}
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </button>{" "}
                   </td>
                   <td>
-                    <Button
-                      className="btn-danger"
+                    <button
+                      className="btn  my-btn"
                       onClick={() => handleDelete(order._id)}
                     >
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span></span>
                       Delete
-                    </Button>
+                    </button>
                   </td>
                 </tr>
               </tbody>

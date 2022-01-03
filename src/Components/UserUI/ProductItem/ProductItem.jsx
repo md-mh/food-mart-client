@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Card, Col, Container, Modal, Row } from "react-bootstrap";
+import { Card, Col, Container, Modal, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./ProductItem.css";
 
@@ -13,23 +13,25 @@ const ProductItem = (props) => {
   return (
     <>
       <Col>
-        {/* single service card */}
-        <Card className="card">
-          <Card.Img variant="top" src={img} className="card-img" />
+        {/* single food card */}
+        <Card className="card my-card">
+          <div className="img-hover">
+            <Card.Img variant="top" src={img} className="card-img" />
+          </div>
           <Card.Body>
             <Container>
               <div className="d-flex justify-content-between align-items-center">
                 <h4>{title}</h4>
-                <span>
-                  <span className="fw-bold">Cost:</span> {price}tk
-                </span>
+                <span className="fw-bold">Cost: {price}৳</span>
               </div>
               <br />
               <div className="d-flex justify-content-between align-items-center">
-                <Button onClick={() => setLgShow(true)}>See Details</Button>
-                <Link to={`/placeOrder/${_id}`}>
+                <button className="btn-buy" onClick={() => setLgShow(true)}>
+                  <span>See Details</span>
+                </button>
+                <Link className="btn-buy" to={`/placeOrder/${_id}`}>
                   {" "}
-                  <Button variant="info"> Buy now </Button>{" "}
+                  <span>Buy now</span>{" "}
                 </Link>
               </div>
             </Container>
@@ -69,7 +71,10 @@ const ProductItem = (props) => {
                   </span>
                   <Link to={`/placeOrder/${_id}`}>
                     {" "}
-                    <Button variant="info"> Buy now </Button>{" "}
+                    <button className="btn-buy">
+                      {" "}
+                      <span>Buy Now</span>{" "}
+                    </button>{" "}
                   </Link>
                 </div>
               </Col>

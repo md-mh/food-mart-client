@@ -14,8 +14,10 @@ const Review = () => {
 
   return (
     <Container className="my-5">
-      <h1 className="text-center py-5">
-        Customer <span className="text-primary">Reviews</span>
+      <h1 className="text-center py-5 heading">
+        <span className="span">
+          Customer <span className="text-primary">Reviews</span>
+        </span>
       </h1>
       <Carousel variant="dark" indicators="false">
         {
