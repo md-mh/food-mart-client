@@ -32,7 +32,23 @@ const Registration = () => {
   return (
     <Container className='register pt-5 my-5'>
       <Row data-aos='zoom-in' md={2} sm={1} className=' container-form h-100'>
+       
         <Col>
+          <div className='overlay-container py-2'>
+            <div className='overlay py-5'>
+              <div className='overlay-panel'>
+                <h1>Welcome Back!</h1>
+                <p>
+                  To keep connected with us please login with your personal info
+                </p>
+                <Link to='/login'>
+                  <button className='ghost'>Sign In</button>
+                </Link>
+              </div>
+            </div>
+          </div>
+              </Col>
+              <Col>
           <div className='form-container py-5'>
             <form onSubmit={handleRegistration}>
               <h1>Create Account</h1>
@@ -62,21 +78,6 @@ const Registration = () => {
 
               <p className='text-danger'>{error}</p>
             </form>
-          </div>
-        </Col>
-        <Col>
-          <div className='overlay-container py-2'>
-            <div className='overlay py-5'>
-              <div className='overlay-panel'>
-                <h1>Welcome Back!</h1>
-                <p>
-                  To keep connected with us please login with your personal info
-                </p>
-                <Link to='/login'>
-                  <button className='ghost'>Sign In</button>
-                </Link>
-              </div>
-            </div>
           </div>
         </Col>
       </Row>

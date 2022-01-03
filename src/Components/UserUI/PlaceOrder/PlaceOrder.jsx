@@ -3,7 +3,7 @@ import { Col, Container, Form, Row } from "react-bootstrap";
 import { useParams } from "react-router";
 import Swal from "sweetalert2";
 import useAuth from "../../../Hooks/useAuth";
-import '../ProductItem/ProductItem.css'
+import "../ProductItem/ProductItem.css";
 
 // Place Order page Components
 const PlaceOrder = () => {
@@ -65,21 +65,30 @@ const PlaceOrder = () => {
               <span className='fw-bold'>Price:</span> {serviceDetails?.price}tk
             </p>
           </Col>
-   
+
           <Col md={6}>
-            <Form onSubmit={handleOrder} className="py-5 left my-form">
-              <Form.Group  className='mb-3 label' controlId='formBasicName'>
-                <Form.Label className="label">Name</Form.Label>
-                <Form.Control className="input" type='text' value={user.displayName} />
+            <Form onSubmit={handleOrder} className='py-5 left my-form'>
+              <Form.Group className='mb-3 label' controlId='formBasicName'>
+                <Form.Label className='label'>Name</Form.Label>
+                <Form.Control
+                  className='input'
+                  type='text'
+                  value={user.displayName}
+                />
               </Form.Group>
-              <Form.Group  className='mb-3 label' controlId='formBasicEmail'>
-                <Form.Label className="label">Email</Form.Label>
-                <Form.Control className="input" type='text' value={user.email} />
+              <Form.Group className='mb-3 label' controlId='formBasicEmail'>
+                <Form.Label className='label'>Email</Form.Label>
+                <Form.Control
+                  className='input'
+                  type='text'
+                  value={user.email}
+                />
               </Form.Group>
 
-              <Form.Group  className='mb-3 label' controlId='formBasicPassword'>
-                <Form.Label >Mobile Number</Form.Label>
-                <Form.Control className="input"
+              <Form.Group className='mb-3 label' controlId='formBasicPassword'>
+                <Form.Label>Mobile Number</Form.Label>
+                <Form.Control
+                  className='input'
                   type='number'
                   placeholder='Write your Mobile number'
                   ref={mobileRef}
@@ -87,9 +96,10 @@ const PlaceOrder = () => {
                 />
               </Form.Group>
 
-              <Form.Group className='mb-3 label'  controlId='formBasic'>
-                <Form.Label className="label">Address</Form.Label>
-                <Form.Control className="input"
+              <Form.Group className='mb-3 label' controlId='formBasic'>
+                <Form.Label className='label'>Address</Form.Label>
+                <Form.Control
+                  className='input'
                   as='textarea'
                   placeholder='Write your address'
                   style={{ height: "100px" }}

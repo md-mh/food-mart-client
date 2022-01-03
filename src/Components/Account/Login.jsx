@@ -5,7 +5,7 @@ import useAuth from "../../Hooks/useAuth";
 import Sociallogin from "./Sociallogin";
 
 const Login = () => {
-  const { error, signInUsingEmail, user, sentResetPassByEmail } = useAuth();
+  const {  signInUsingEmail, user, sentResetPassByEmail } = useAuth();
   const [loginData, setLoginData] = useState({});
 
   // handle login redirect
@@ -27,7 +27,22 @@ const Login = () => {
 
   return (
     <Container className='register py-5 mt-5'>
-      <Row data-aos='zoom-in' md={2} sm={1} className='container-form h-100'>
+          <Row data-aos='zoom-in' md={2} sm={1} className='container-form h-100'>
+          <Col>
+          <div className='overlay-container py-2'>
+            <div className='overlay py-5'>
+              <div className='overlay-panel'>
+                <h1>Hello, {user.displayName ? user.displayName : "Sir"}</h1>
+                <p className='form-info'>
+                  Enter your personal details and start journey with us
+                </p>
+                <Link to='/registration'>
+                  <button className='ghost'>Sign Up</button>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </Col>
         <Col>
           <div className='form-container py-5'>
             <form onSubmit={handleEmailLogin}>
@@ -55,21 +70,7 @@ const Login = () => {
             </form>
           </div>
         </Col>
-        <Col>
-          <div className='overlay-container py-2'>
-            <div className='overlay py-5'>
-              <div className='overlay-panel'>
-                <h1>Hello, {user.displayName ? user.displayName : "Sir"}</h1>
-                <p className='form-info'>
-                  Enter your personal details and start journey with us
-                </p>
-                <Link to='/registration'>
-                  <button className='ghost'>Sign Up</button>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </Col>
+        
       </Row>
     </Container>
   );

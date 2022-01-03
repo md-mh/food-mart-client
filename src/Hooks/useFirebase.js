@@ -1,7 +1,7 @@
-import { createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import { useEffect, useState } from "react";
+import Swal from 'sweetalert2';
 import initialzeAuthentization from "../Firebase/firebase.init";
-import Swal from 'sweetalert2'
 
 initialzeAuthentization();
 const auth = getAuth();
@@ -31,18 +31,7 @@ const useFirebase = () => {
             .finally(() => { setLoading(false) });
     }
 
-    const sentResetPassByEmail = (email) => {
-        sendPasswordResetEmail(auth, email)
-            .then(() => {
-
-            setError("")
-        })
-        .catch((error) => {
-            const errorMessage = error.message;
-            setError(errorMessage)
-
-        });
-}
+   
     const signInUsingEmail = (email, password, location, history) => {
         signInWithEmailAndPassword(auth, email, password)
             .then(result => {
@@ -78,7 +67,7 @@ const useFirebase = () => {
         signOut(auth)
             .then(() => {
                 logInSms()
-             })
+            })
             .finally(() => { setLoading(false) });
     }
 
@@ -117,28 +106,28 @@ const useFirebase = () => {
             'Opps',
             'Something wrong',
             'error'
-          ) 
+        )
     }
     const registerSms = () => {
         Swal.fire(
             'Well Done',
             'You have successfully Register',
             'success'
-          )  
+        )
     }
     const logInSms = () => {
         Swal.fire(
             'Well Done',
             'You have successfully Login',
             'success'
-          ) 
+        )
     }
     const deleteSms = () => {
         Swal.fire(
             'Well Done',
             'You have successfully Delete Product',
             'success'
-          ) 
+        )
     }
 
     return {
@@ -149,7 +138,7 @@ const useFirebase = () => {
         registrationUsingEmail,
         signInUsingEmail,
         signInUsingGoogle,
-        logOut,logInSms,registerSms,logInSmsE,deleteSms
+        logOut, logInSms, registerSms, logInSmsE, deleteSms
     }
 
 };
