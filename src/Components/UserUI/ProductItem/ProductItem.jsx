@@ -7,7 +7,7 @@ import './ProductItem.css'
 
 const ProductItem = (props) => {
     // take data using props 
-    const { _id, title, price, description, img, category, availableProducts } = props.service;
+    const { _id, title, price, description, img, category, availableProducts } = props.food;
     const [lgShow, setLgShow] = useState(false);
     return (
         <>
@@ -18,8 +18,10 @@ const ProductItem = (props) => {
                     <Card.Body>
 
                         <Container>
-                            <h4>{title}</h4>
-                            <h5><span className="fw-bold">Cost:</span> {price}tk</h5>
+                            <div className="d-flex justify-content-between align-items-center">
+                                <h4>{title}</h4>
+                                <span><span className="fw-bold">Cost:</span> {price}tk</span>
+                            </div>
                             <br />
                             <div className="d-flex justify-content-between align-items-center">
                                 <Button onClick={() => setLgShow(true)}>See Details</Button>
