@@ -1,6 +1,7 @@
+import { createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import { useEffect, useState } from "react";
 import initialzeAuthentization from "../Firebase/firebase.init";
-import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile, signOut } from "firebase/auth";
+import Swal from 'sweetalert2'
 
 initialzeAuthentization();
 const auth = getAuth();
@@ -17,6 +18,7 @@ const useFirebase = () => {
         createUserWithEmailAndPassword(auth, email, password)
             .then(result => {
                 setError('');
+                registerSms()
                 const user = result.user;
                 setUser(user);
                 updateProfile(auth.currentUser, { displayName: name })
@@ -28,13 +30,28 @@ const useFirebase = () => {
             })
             .finally(() => { setLoading(false) });
     }
+
+    const sentResetPassByEmail = (email) => {
+        sendPasswordResetEmail(auth, email)
+            .then(() => {
+
+            setError("")
+        })
+        .catch((error) => {
+            const errorMessage = error.message;
+            setError(errorMessage)
+
+        });
+}
     const signInUsingEmail = (email, password, location, history) => {
         signInWithEmailAndPassword(auth, email, password)
             .then(result => {
+                logInSms()
                 const redirect_url = location.state?.from || '/dashboard';
                 history.push(redirect_url);
             })
             .catch(error => {
+                logInSmsE()
                 setError(error.message);
             })
             .finally(() => { setLoading(false) });
@@ -46,6 +63,7 @@ const useFirebase = () => {
             .then(result => {
                 const user = result.user;
                 setUser(user);
+                logInSms()
                 saveUser(user.email, user.displayName, 'PUT');
                 const redirect_uri = location.state?.from || '/dashboard';
                 history.push(redirect_uri);
@@ -58,7 +76,9 @@ const useFirebase = () => {
 
     const logOut = () => {
         signOut(auth)
-            .then(() => { })
+            .then(() => {
+                logInSms()
+             })
             .finally(() => { setLoading(false) });
     }
 
@@ -92,6 +112,35 @@ const useFirebase = () => {
         })
         return () => unsubscribe;
     }, [])
+    const logInSmsE = () => {
+        Swal.fire(
+            'Opps',
+            'Something wrong',
+            'error'
+          ) 
+    }
+    const registerSms = () => {
+        Swal.fire(
+            'Well Done',
+            'You have successfully Register',
+            'success'
+          )  
+    }
+    const logInSms = () => {
+        Swal.fire(
+            'Well Done',
+            'You have successfully Login',
+            'success'
+          ) 
+    }
+    const deleteSms = () => {
+        Swal.fire(
+            'Well Done',
+            'You have successfully Delete Product',
+            'success'
+          ) 
+    }
+
     return {
         user,
         admin,
@@ -100,7 +149,7 @@ const useFirebase = () => {
         registrationUsingEmail,
         signInUsingEmail,
         signInUsingGoogle,
-        logOut
+        logOut,logInSms,registerSms,logInSmsE,deleteSms
     }
 
 };

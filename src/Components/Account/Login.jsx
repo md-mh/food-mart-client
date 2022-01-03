@@ -1,62 +1,78 @@
-import React, { useState } from 'react';
-import { Form, Button, Row, Col, Container } from 'react-bootstrap';
-import { Link, useHistory, useLocation } from 'react-router-dom';
-import useAuth from '../../Hooks/useAuth';
-import Sociallogin from './Sociallogin';
+import React, { useState } from "react";
+import { Col, Container, Row } from "react-bootstrap";
+import { Link, useHistory, useLocation } from "react-router-dom";
+import useAuth from "../../Hooks/useAuth";
+import Sociallogin from "./Sociallogin";
 
 const Login = () => {
-    const { error, signInUsingEmail } = useAuth();
-    const [loginData, setLoginData] = useState({});
+  const { error, signInUsingEmail, user, sentResetPassByEmail } = useAuth();
+  const [loginData, setLoginData] = useState({});
 
-    // handle login redirect 
-    const location = useLocation();
-    const history = useHistory();
+  // handle login redirect
+  const location = useLocation();
+  const history = useHistory();
 
-    const handleOnBlur = e => {
-        const field = e.target.name;
-        const value = e.target.value;
-        const newLoginData = { ...loginData };
-        newLoginData[field] = value;
-        setLoginData(newLoginData);
-    }
+  const handleOnBlur = (e) => {
+    const field = e.target.name;
+    const value = e.target.value;
+    const newLoginData = { ...loginData };
+    newLoginData[field] = value;
+    setLoginData(newLoginData);
+  };
 
-    const handleEmailLogin = e => {
-        signInUsingEmail(loginData.email, loginData.password, location, history)
-        e.preventDefault();
-    }
+  const handleEmailLogin = (e) => {
+    signInUsingEmail(loginData.email, loginData.password, location, history);
+    e.preventDefault();
+  };
 
-    return (
-        <Container>
-            <br /><h2 className="text-center">Please Login</h2>
-            <Row className="my-5 d-flex align-items-center">
-                <Col md={{ span: 4, offset: 1 }}>
-                    <img src="https://i.ibb.co/GsZbgSF/login.png" alt="Login-img" />
-                </Col>
-
-                <Col md={{ span: 4, offset: 1 }}>
-                    {/* login form  */}
-                    <Form onSubmit={handleEmailLogin}>
-                        <Form.Group className="mb-3" controlId="formBasicEmail">
-                            <Form.Label>Email address</Form.Label>
-                            <Form.Control name="email" onBlur={handleOnBlur} type="email" placeholder="Enter email" />
-                        </Form.Group>
-
-                        <Form.Group className="mb-3" controlId="formBasicPassword">
-                            <Form.Label>Password</Form.Label>
-                            <Form.Control name="password" onBlur={handleOnBlur} type="password" placeholder="Password" />
-                        </Form.Group>
-                        <p className="text-danger">{error}</p>
-                        <Button variant="primary" type="submit">Submit</Button>
-                        <br /><br />
-                        <span>Don't have an Account <Link to="/registration"> Please Registration</Link> </span>
-                    </Form>
-                    {/* social login component  */}
-                    <Sociallogin></Sociallogin>
-                </Col>
-            </Row>
-
-        </Container>
-    );
+  return (
+    <Container className='register py-5 mt-5'>
+      <Row data-aos='zoom-in' md={2} sm={1} className='container-form h-100'>
+        <Col>
+          <div className='form-container py-5'>
+            <form onSubmit={handleEmailLogin}>
+              <h1>Sign in</h1>
+              <Sociallogin></Sociallogin>
+              <span className='fs-4'>or use your account</span>
+              <input
+                onBlur={handleOnBlur}
+                type='email'
+                name='email'
+                placeholder='Email'
+                required
+              />
+              <input
+                onBlur={handleOnBlur}
+                type='password'
+                name='password'
+                placeholder='Password'
+                required
+              />
+              <button className='submit w-100' onClick={sentResetPassByEmail}>
+                Forgot your password?
+              </button>
+              <input className='submit' type='submit' value='Sign In' />
+            </form>
+          </div>
+        </Col>
+        <Col>
+          <div className='overlay-container py-2'>
+            <div className='overlay py-5'>
+              <div className='overlay-panel'>
+                <h1>Hello, {user.displayName ? user.displayName : "Sir"}</h1>
+                <p className='form-info'>
+                  Enter your personal details and start journey with us
+                </p>
+                <Link to='/registration'>
+                  <button className='ghost'>Sign Up</button>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </Col>
+      </Row>
+    </Container>
+  );
 };
 
 export default Login;
