@@ -1,32 +1,52 @@
 import React from 'react';
-import { Col, Container, Form, Row, Button } from 'react-bootstrap';
+import '../ProductItem/ProductItem.css'
 
 
 // Homepage Contact area 
 const Contact = () => {
     return (
-        <Container>
-            <Row className="justify-content-center my-5 py-3">
-                <Col md={8}>
-                    <h1 className="text-center "><span className="text-primary">Contact</span> Us</h1> <br />
-                    <Form>
-                        <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-                            <Form.Label>Your Name</Form.Label>
-                            <Form.Control type="email" placeholder="Enter your Name" />
-                        </Form.Group>
-                        <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-                            <Form.Label>Email address</Form.Label>
-                            <Form.Control type="email" placeholder="Enter your Email" />
-                        </Form.Group>
-                        <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-                            <Form.Label>Textarea</Form.Label>
-                            <Form.Control as="textarea" placeholder="Write your Description" rows={3} />
-                        </Form.Group>
-                        <Button variant="info" >Submit</Button>
-                    </Form>
-                </Col>
-            </Row>
-        </Container>
+        <div className=" py-5 text-black border-5">
+        <div className="container">
+            <div className="row">
+                <h1 className="text-center heading"><span className="span">Contact Us</span></h1>
+            </div>
+            <div className="row mb-5 my-4">
+                <h4 style={{ textAlign: "center" }}>We'd love to hear from you!</h4>
+            </div>
+            <form  className='shadow-lg py-5'>
+            <div className="row input-container">
+                <div className="col-xs-12">
+                    <div className="styled-input wide">
+                        <input name="name" type="text" required />
+                        <label>Name</label>
+                    </div>
+                </div>
+                <div className="col-md-6 col-sm-12">
+                    <div className="styled-input">
+                        <input type="text" name="email" required />
+                        <label>Email</label>
+                    </div>
+                </div>
+                <div className="col-md-6 col-sm-12">
+                    <div className="styled-input" style={{ float: "right;" }}>
+                        <input type="text" name="phone" required />
+                        <label>Phone Number</label>
+                    </div>
+                </div>
+                <div className="col-xs-12">
+                    <div className="styled-input wide">
+                        <textarea name="sms" required></textarea>
+                        <label>Message</label>
+                    </div>
+                </div>
+                <div className="col-xs-12">
+                    <button type='submit' className="btn-lrg submit-btn">Send Message</button>
+                </div>
+            </div>
+            </form>
+        </div>
+
+    </div>
     );
 };
 

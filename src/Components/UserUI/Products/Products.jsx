@@ -59,7 +59,7 @@ const Products = () => {
   return (
     <>
       <Row>
-        <Col md={3}>
+        <Col md={2}>
           <Filter
             handleSellsAscending={handleSellsAscending}
             handleSellsDescending={handleSellsDescending}
@@ -69,7 +69,7 @@ const Products = () => {
             handleClearFilter={handleClearFilter}
           ></Filter>
         </Col>
-        <Col md={9}>
+        <Col md={10}>
           <Container className="my-3 py-3">
             <h1 className="py-3">
               Order the <span className="text-primary">food</span> you need
@@ -87,77 +87,77 @@ const Products = () => {
               {
                 // mappimg data from Foods
                 categories === "allCategory" &&
-                  (displayFoods.length === 0
-                    ? foods.map((food) => (
-                        <ProductItem key={food._id} food={food}></ProductItem>
-                      ))
-                    : displayFoods.map((food) => (
-                        <ProductItem key={food._id} food={food}></ProductItem>
-                      )))
+                (displayFoods.length === 0
+                  ? foods.map((food) => (
+                    <ProductItem key={food._id} food={food}></ProductItem>
+                  ))
+                  : displayFoods.map((food) => (
+                    <ProductItem key={food._id} food={food}></ProductItem>
+                  )))
               }
               {/* fish category filter */}
               {
                 // mappimg data from Foods
                 categories === "fish" &&
-                  (displayFoods.length === 0
-                    ? foods
-                        .filter((food) => food.category === "Fish")
-                        .map((food) => (
-                          <ProductItem key={food._id} food={food}></ProductItem>
-                        ))
-                    : displayFoods
-                        .filter((food) => food.category === "Fish")
-                        .map((food) => (
-                          <ProductItem key={food._id} food={food}></ProductItem>
-                        )))
+                (displayFoods.length === 0
+                  ? foods
+                    .filter((food) => food.category === "Fish")
+                    .map((food) => (
+                      <ProductItem key={food._id} food={food}></ProductItem>
+                    ))
+                  : displayFoods
+                    .filter((food) => food.category === "Fish")
+                    .map((food) => (
+                      <ProductItem key={food._id} food={food}></ProductItem>
+                    )))
               }
               {/* meat category filter */}
               {
                 // mappimg data from Foods
                 categories === "meat" &&
-                  (displayFoods.length === 0
-                    ? foods
-                        .filter((food) => food.category === "Meat")
-                        .map((food) => (
-                          <ProductItem key={food._id} food={food}></ProductItem>
-                        ))
-                    : displayFoods
-                        .filter((food) => food.category === "Meat")
-                        .map((food) => (
-                          <ProductItem key={food._id} food={food}></ProductItem>
-                        )))
+                (displayFoods.length === 0
+                  ? foods
+                    .filter((food) => food.category === "Meat")
+                    .map((food) => (
+                      <ProductItem key={food._id} food={food}></ProductItem>
+                    ))
+                  : displayFoods
+                    .filter((food) => food.category === "Meat")
+                    .map((food) => (
+                      <ProductItem key={food._id} food={food}></ProductItem>
+                    )))
               }
               {/* fruits category filter */}
               {
                 // mappimg data from Foods
                 categories === "fruits" &&
-                  (displayFoods.length === 0
-                    ? foods
-                        .filter((food) => food.category === "Fruits")
-                        .map((food) => (
-                          <ProductItem key={food._id} food={food}></ProductItem>
-                        ))
-                    : displayFoods
-                        .filter((food) => food.category === "Fruits")
-                        .map((food) => (
-                          <ProductItem key={food._id} food={food}></ProductItem>
-                        )))
+                (displayFoods.length === 0
+                  ? foods
+                    .filter((food) => food.category === "Fruits")
+                    .map((food) => (
+                      <ProductItem key={food._id} food={food}></ProductItem>
+                    ))
+                  : displayFoods
+                    .filter((food) => food.category === "Fruits")
+                    .map((food) => (
+                      <ProductItem key={food._id} food={food}></ProductItem>
+                    )))
               }
               {/* vegetables category filter */}
               {
                 // mappimg data from Foods
                 categories === "vegetables" &&
-                  (displayFoods.length === 0
-                    ? foods
-                        .filter((food) => food.category === "Vegetables")
-                        .map((food) => (
-                          <ProductItem key={food._id} food={food}></ProductItem>
-                        ))
-                    : displayFoods
-                        .filter((food) => food.category === "Vegetables")
-                        .map((food) => (
-                          <ProductItem key={food._id} food={food}></ProductItem>
-                        )))
+                (displayFoods.length === 0
+                  ? foods
+                    .filter((food) => food.category === "Vegetables")
+                    .map((food) => (
+                      <ProductItem key={food._id} food={food}></ProductItem>
+                    ))
+                  : displayFoods
+                    .filter((food) => food.category === "Vegetables")
+                    .map((food) => (
+                      <ProductItem key={food._id} food={food}></ProductItem>
+                    )))
               }
             </Row>
           </Container>

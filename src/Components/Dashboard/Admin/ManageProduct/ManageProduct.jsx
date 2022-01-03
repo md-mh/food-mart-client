@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { Col, Container, Row, Table, Button } from "react-bootstrap";
+import { Col, Container, Row, Table } from "react-bootstrap";
+import Swal from "sweetalert2";
+import useAuth from "../../../../Hooks/useAuth";
 
 // Manage Product Components
 const ManageProduct = () => {
   const [services, setServices] = useState([]);
+  const { deleteSms } = useAuth();
   useEffect(() => {
     fetch("https://morning-refuge-65051.herokuapp.com/food")
       .then((res) => res.json())
@@ -12,20 +15,30 @@ const ManageProduct = () => {
 
   // Delete a product
   const handleDelete = (id) => {
-    const confirm = window.confirm("Are you wants to delete?");
-    if (confirm) {
-      fetch(`https://morning-refuge-65051.herokuapp.com/food/${id}`, {
-        method: "DELETE",
-      });
-      const remaining = services.filter((data) => data._id !== id);
-      setServices(remaining);
-    }
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((res) => {
+      if (res.isConfirmed) {
+        fetch(`https://morning-refuge-65051.herokuapp.com/food/${id}`, {
+          method: "DELETE",
+        });
+        const remaining = services.filter((data) => data._id !== id);
+        setServices(remaining);
+        deleteSms();
+      }
+    });
   };
 
   return (
     <Container>
-      <h2 className="text-center">Manage Products</h2>
-      <Row className="justify-content-center">
+      <h4 className='heading'><span className="span">Manage Products</span></h4> <br />
+      <Row className='justify-content-center'>
         <Col>
           <Table>
             <thead>
@@ -33,24 +46,27 @@ const ManageProduct = () => {
                 <th>Image</th>
                 <th>Name</th>
                 <th>Price</th>
-                <th>Remove</th>
+                <th className="text-center">Remove</th>
               </tr>
             </thead>
             {services.map((service) => (
               <tbody key={service._id} service={service}>
                 <tr>
                   <td>
-                    <img src={service.img} className="featureImg" alt="" />
+                    <img src={service.img} className='featureImg' alt='' />
                   </td>
                   <td>{service.title}</td>
                   <td>{service.price}</td>
-                  <td>
-                    <Button
-                      className="btn-danger"
-                      onClick={() => handleDelete(service._id)}
-                    >
+                  <td className="text-center">
+                    <button
+                      className='btn  my-btn'
+                      onClick={() => handleDelete(service._id)}>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span></span>
                       Delete
-                    </Button>
+                    </button>
                   </td>
                 </tr>
               </tbody>

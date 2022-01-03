@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
-import { Container, Row } from "react-bootstrap";
-import ProductItem from "../../ProductItem/ProductItem";
+import React, { useEffect, useState } from 'react';
+import { Container, Row } from 'react-bootstrap';
+import ProductItem from '../../ProductItem/ProductItem';
+import '../../ProductItem/ProductItem.css'
 
 // Home page Product component
 

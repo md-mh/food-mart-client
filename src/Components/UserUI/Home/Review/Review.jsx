@@ -1,61 +1,52 @@
-import "./Review.css";
-import React, { Component } from "react";
-import Slider from "react-slick";
-import { Container } from "react-bootstrap";
+import React, { useEffect, useState } from "react";
+import { Container, Carousel, Row, Col } from "react-bootstrap";
+import Rating from "react-rating";
+import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 
-// 2.3 - Partners Carousel
-export default class Responsive extends Component {
-  render() {
-    var settings = {
-      dots: false,
-      infinite: true,
-      speed: 500,
-      slidesToShow: 5,
-      slidesToScroll: 4,
-      initialSlide: 0,
-      responsive: [
+// Home Page Review Component
+const Review = () => {
+  const [reviews, setReviews] = useState([]);
+  useEffect(() => {
+    fetch("https://morning-refuge-65051.herokuapp.com/review/")
+      .then((res) => res.json())
+      .then((data) => setReviews(data));
+  }, []);
+
+  return (
+    <Container className='my-5'>
+      <h1 className='text-center py-5 heading'>
+        <span className='span'>
+          Customer <span className='text-primary'>Reviews</span>
+        </span>
+      </h1>
+      <Carousel variant='dark' indicators='false'>
         {
-          breakpoint: 1024,
-          settings: {
-            slidesToShow: 3,
-            slidesToScroll: 3,
-            infinite: true,
-            dots: false
-          }
-        },
-        {
-          breakpoint: 600,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 2,
-            initialSlide: 2
-          }
-        },
-        {
-          breakpoint: 480,
-          settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1
-          }
+          // mappimg data from reviews
+          reviews.map((service) => (
+            <Carousel.Item key={service._id} service={service}>
+              <Row className='justify-content-center'>
+                <Col md={7}>
+                  <div className='text-center'>
+                    <Rating
+                      className='p-2'
+                      initialRating={service.rating}
+                      fullSymbol={<AiFillStar />}
+                      emptySymbol={<AiOutlineStar />}
+                      readonly
+                    />
+                    <p>{service.comment}</p>
+                    <h4 className='text-end'> - {service.name}</h4>
+                    <br />
+                    <br />
+                  </div>
+                </Col>
+              </Row>
+            </Carousel.Item>
+          ))
         }
-      ]
-    };
-    return (
-      <>
+      </Carousel>
+    </Container>
+  );
+};
 
-        <div className="slider-title">
-          <p>Meet The Partners</p>
-        </div>
-
-        <Container>
-          <Slider {...settings}>
-            <div>
-              <img src="https://i.ibb.co/vH4N5tc/Wooden-Watch.png" alt="brand" />
-            </div>
-
-          </Slider>
-        </Container>
-      </>
-    );
-  }
-}
+export default Review;
