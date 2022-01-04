@@ -80,10 +80,10 @@ const Products = () => {
           <Container>
 
             <Row className="d-flex justify-content-center align-items-center">
-              <Col sm={10} className="my-4 px-5">
+              <Col xm={10} sm={10} className="my-4 px-5">
                 <h1 className="heading my-5"><span className="span">Order fresh <span className="text-primary">food</span></span></h1>
               </Col>
-              <Col sm={2}>
+              <Col xm={2} sm={2}>
                 <Button
                   variant='light'
                   className='filterCanvas'
