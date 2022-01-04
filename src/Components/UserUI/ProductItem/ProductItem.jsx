@@ -7,8 +7,16 @@ import "./ProductItem.css";
 
 const ProductItem = (props) => {
   // take data using props
-  const { _id, title, price, description, img, category, availableProducts } =
-    props.food;
+  const {
+    _id,
+    title,
+    price,
+    description,
+    img,
+    category,
+    availableProducts,
+    totalSell,
+  } = props.food;
   const [lgShow, setLgShow] = useState(false);
   return (
     <>
@@ -23,6 +31,10 @@ const ProductItem = (props) => {
               <div className="d-flex justify-content-between align-items-center">
                 <h4>{title}</h4>
                 <h4>৳{price}</h4>
+              </div>
+              <div className="d-flex justify-content-between align-items-center">
+                <h6>Total Sell: {totalSell}</h6>
+                <h6>Available: {availableProducts}</h6>
               </div>
               <br />
               <div className="d-flex justify-content-between align-items-center">
