@@ -1,14 +1,8 @@
 # Food-Mart (Client Site)
 
-<<<<<<< HEAD
-Live Site:  [Food-Mart](https://food-mart1.firebaseapp.com/).
-
-
-Contributor: [Mahedi](https://github.com/md-mh), [Hafiz](https://github.com/hafiz229), [Farid](https://github.com/developerfarid).
-
-
-=======
 Live Site: [Food-Mart](https://food-mart1.firebaseapp.com/).
+
+Server Site Github LInk : [Food-Mart-Server](https://github.com/md-mh/food-mart-server).
 
 ## Features and Functionality
 
@@ -27,4 +21,3 @@ Live Site: [Food-Mart](https://food-mart1.firebaseapp.com/).
 HTML5, CSS3, JavaScript (ES6), React-Bootstrap, React-Icon, React.js, Rect Router, Context API, Node.js, Express.js, REST API, MongoDB Atlas, Firebase, Heroku
 
 ## Contributor: [Mahedi](https://github.com/md-mh), [Hafiz](https://github.com/hafiz229), [Farid](https://github.com/developerfarid).
->>>>>>> 23f4f435424377cad12f28a68a4fbc927b9a95ea
