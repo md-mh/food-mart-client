@@ -1,14 +1,6 @@
-# Food-Mart (Client Site)
+# Website Name: Food-Mart (Client Site)
 
-<<<<<<< HEAD
-Live Site:  [Food-Mart](https://food-mart1.firebaseapp.com/).
-
-
-Contributor: [Mahedi](https://github.com/md-mh), [Hafiz](https://github.com/hafiz229), [Farid](https://github.com/developerfarid).
-
-
-=======
-Live Site: [Food-Mart](https://food-mart1.firebaseapp.com/).
+## Live Site:  [Food-Mart](https://food-mart1.firebaseapp.com/).
 
 ## Features and Functionality
 
