@@ -1,8 +1,8 @@
 # Website Name: Food-Mart (Client Site)
 
-Live Site: [Food-Mart](https://food-mart1.firebaseapp.com/).
+Live Site Link: [Food-Mart](https://food-mart1.firebaseapp.com/).
 
-Server Site Github LInk : [Food-Mart-Server](https://github.com/md-mh/food-mart-server).
+Server Site Github Link : [Food-Mart-Server](https://github.com/md-mh/food-mart-server).
 
 ## Features and Functionality
 
